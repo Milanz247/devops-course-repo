@@ -1,0 +1,24 @@
+# GitHub Action workflow file: .github/workflows/hello.yml
+
+name: A Simple Hello World Workflow
+
+# pipeline එක trigger වෙන්න ඕන event එක
+on:
+  push:
+    branches: [ master ] # master branch එකට push කරාම විතරක්
+  pull_request:
+    branches: [ master ] # master branch එකට PR හැදුවම
+
+# pipeline එකේ දුවන jobs
+jobs:
+  say-hello-job:
+    # job එක දුවන්න ඕන මොන වගේ machine එකකද කියලා කියනවා
+    runs-on: ubuntu-latest
+
+    # job එකේ පියවර (steps)
+    steps:
+      - name: Print Hello Message
+        run: echo "Hello DevOps Learner! Your first workflow ran successfully!"
+
+      - name: Print Goodbye Message
+        run: echo "Keep learning! You are on the right track."
